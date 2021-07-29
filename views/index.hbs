@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <link rel="apple-touch-icon" sizes="76x76" href="../static/assets/img/apple-icon.png">
+        <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>
+            {{ title }}
+        </title>
+        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+        <!--     Fonts and icons     -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+        <!-- CSS Files -->
+        <link href="../static/assets/css/material-kit.css" rel="stylesheet" />
+        <!-- CSS Just for demo purpose, don't include it in your project -->
+        <link href="../static/css/image.css" rel="stylesheet" />
+    </head>
+<!--Navigation bar start -->
+
+<body class="index-page sidebar-collapse">
+    <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <h3> <span class="material-icons"> home</span> Home Compare</h3>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./display.hbs" onclick="scrollToDownload()">
+                            <span class="material-icons">tv</span></br> </br>Display </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.hbs">
+                            <span class="material-icons">unarchive</span></br> </br>Form </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.hbs">
+                            <span class="material-icons">login</span></br> </br>Login </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./signup.hbs">
+                            <span class="material-icons">email</span></br> </br> Sign-up </a>
+                    </li>
+                        
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Navigation bar ends -->
+    <!--HEader Image -->
+    <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('../static/image/house1.jpeg'); z-index: -1; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                        <h1 style="color:White"> Home-Compare</h1>
+                        <h3> A place where You can Trust.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Form Start-->
+    <div class="main main-raised">
+        <form>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="pb-3">
+                        <form>
+                            <div class="form-group ml-4   mt-4">
+                                <label for="formGroupExampleInput"> <b> Rooms in BHK </b> </label>
+                                <input type="number" name="bhk" class="form-control" id="formGroupExampleInput" placeholder="Example 400 sq m">
+                            </div>
+                            <div class="form-group ml-4   mt-4">
+                                <label for="formGroupExampleInput"> <b> Area in Square Meter </b> </label>
+                                <input type="text" name="area" class="form-control" id="formGroupExampleInput" placeholder="Example 400 sq m">
+                            </div>
+                            <div class="form-group  ml-4 mt-2">
+                                <label for="formGroupExampleInput2"> <b> Location</b> </label>
+                                <input type="text" name="location" class="form-control" id="formGroupExampleInput2" placeholder="Example - Delhi">
+                            </div>
+                            <div class="form-group ml-4  mt-2">
+                                <label for="formGroupExampleInput2"> <b> Price</b></label>
+                                <input type="text" name="price" class="form-control" id="formGroupExampleInput2" placeholder="In INR">
+                            </div>
+                            <div class="form-group ml-4  mt-2 border-bottom">
+                                <input type="radio" id="Furnished" name="gender" name="house-type" value="Furnished">
+                                <label for="Furnished"> <b>Furnished</b></label><br>
+                                <input type="radio" id="Non-Furnished" name="gender" name="house-type" value="Non-Furnished">
+                                <label for="Non-Furnished"><b> Non-Furnished</b></label><br>
+                                <input type="radio" id="Semi-Furnished" name="gender" name="house-type" value="Semi-Furnished">
+                                <label for="Semi-Furnished"><b> Semi-Furnished</b> </label>
+                            </div>
+
+                            <div class="form-group ml-4  mt-2 border-bottom">
+                                <label for="formGroupExampleInput"> <b> House - condition </b> </label><br>
+                                <input type="radio" id="ready" name="gender" name="house-type" value="true">
+                                <label for="ready"> <b>Ready to move</b></label><br>
+                                <input type="radio" id="notReady" name="gender" name="house-type" value="flase">
+                                <label for="notReady"><b> Not Ready To move</b></label><br>
+
+                            </div>
+
+
+                            <div class="form-group  ml-4 mt-2">
+                                <label for="formGroupExampleInput2"> <b> Description Of Your House </b></label>
+                                <textarea type="text" name="description" class="form-control" id="formGroupExampleInput2" placeholder="Another input" rows="11" style="border: 1px solid ">
+
+                                </textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- image section start -->
+                <div class="col-md-4">
+                    <div class="col-md-16 my-2">
+                        <div class="text-center"> <b> Interiors Image of house </b> </div>
+                        <div class="box mb-2">
+                            <div class="js--image-preview" value=""></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" name="interior" value="" accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-16 ">
+                        <div class="text-center"> <b> Exteriors Image of house </b> </div>
+                        <div class="box mt-3">
+                            <div class="js--image-preview"></div>
+                            <div class="upload-options">
+                                <label>
+                                    <input type="file" class="image-upload" name="exterior" value="" value=""
+                                        accept="image/*" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- image section end -->
+
+
+
+            <div class="text-center" style="width:70%">
+                <button type="submit" class="btn btn-primary btnsumbit btn-lg ">Submit</button>
+            </div>
+        </form>
+
+        <!-- form ended here -->
+    </div>
+    <!--  End Modal -->
+    <footer class="bg-light text-center text-lg-start" style="width: 100%;">
+        <!-- Copyright -->
+        <!-- no footer right now -->
+    </footer>
+    <!--   Core JS Files   -->
+        <script src="../static/assets/js/core/jquery.min.js" type="text/javascript"></script>
+        <script src="../static/assets/js/core/popper.min.js" type="text/javascript"></script>
+        <script src="../static/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+        <script src="../static/assets/js/plugins/moment.min.js"></script>
+        <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+        <script src="../static/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+        <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+        <script src="../static/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+        <!--  Google Maps Plugin    -->
+        <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+        <script src="../static/assets/js/material-kit.js" type="text/javascript"></script>
+</body>
+
+</html>
