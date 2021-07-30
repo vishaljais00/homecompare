@@ -10,12 +10,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // get index page
-
+ 
 router.get('/', (req,res,next) =>{
-    res.render('index.hbs',
-    {
-        title: "Home Compare"
-    })
+    res.render('login.hbs')
 
 })
 

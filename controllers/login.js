@@ -14,16 +14,16 @@ const db = mysql.createConnection({
 
 //login user
 
-exports.login = async (req,res) =>{
+exports.login = async (req,res,next) => {
 
 
 
     var email = req.body.email;
     var password = req.body.password;
-    console.log(req.body.email)
+    
 
     // statement to query the user’s password
-    var statement = "select password from users where username = ?";
+    var login_query = "SELECT * from users where email = ?";
 
     db.query('SELECT email from users where email = ? ',[email], function(error, result){
 
@@ -31,11 +31,11 @@ exports.login = async (req,res) =>{
             console.log(error);
         }
 
-        if(result.length<=0){
+        if(result.length<0){
 
             return res.render('login' ,{
 
-                message: 'This Email does not registered yet'
+                message: 'pls enter your email'
             })
 
         }
@@ -55,30 +55,31 @@ exports.login = async (req,res) =>{
         }
 
 
-        db.query('SELECT password from users where username = ?', [email], async(err, res)=>{
-            if (err) throw err;
-            else {
-              let hash = res.rows[0].password;
-              console.log(hash)
-              // compare hash and password
-
-              bcrypt.compareSync(password, hash, function(error, results) {
+        db.query(login_query, [email], async(err, results)=>{
                
-            if(error){
-                console.log(error);
-            } else {
-                console.log(results);
+            if(err) throw err;
+
+            if(results.length && bcrypt.compareSync(password, results[0].password)){
+
                 return res.render('index')
             }
-              });
+            else{  
+            return res.render('login' ,{
+
+                message: 'pasword does not match'
+            })
             }
-          });
+            
+         });   
+   
     })
+
 }
 
    
 
     
+
 
 
 

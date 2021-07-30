@@ -57,7 +57,6 @@ exports.register = (req ,res )=> {
         
 
             let hashedPassword =await bcrypt.hashSync(password,salt);
-            console.log(hashedPassword);
 
           db.query('INSERT INTO users SET ?', {username:username, email:email, password:hashedPassword}, (error,results)=>{
 

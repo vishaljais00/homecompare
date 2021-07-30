@@ -38,12 +38,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./login.hbs">
-                            <span class="material-icons">login</span></br> </br>Login </a>
+                            <span class="material-icons">logout</span></br> </br>Logout </a>
                     </li>
-                    <li class="nav-item">
+                    {{!-- <li class="nav-item">
                         <a class="nav-link" href="./signup.hbs">
                             <span class="material-icons">email</span></br> </br> Sign-up </a>
-                    </li>
+                    </li> --}}
                         
                 </ul>
             </div>
@@ -65,11 +65,10 @@
     </div>
     <!-- Form Start-->
     <div class="main main-raised">
-        <form>
+        <form class="form" method="post" action="/auth/index.hbs">
             <div class="row">
                 <div class="col-md-8">
                     <div class="pb-3">
-                        <form>
                             <div class="form-group ml-4   mt-4">
                                 <label for="formGroupExampleInput"> <b> Rooms in BHK </b> </label>
                                 <input type="number" name="bhk" class="form-control" id="formGroupExampleInput" placeholder="Example 400 sq m">
@@ -111,7 +110,6 @@
 
                                 </textarea>
                             </div>
-                        </form>
                     </div>
                 </div>
                 <!-- image section start -->
@@ -142,8 +140,6 @@
                 </div>
             </div>
             <!-- image section end -->
-
-
 
             <div class="text-center" style="width:70%">
                 <button type="submit" class="btn btn-primary btnsumbit btn-lg ">Submit</button>
